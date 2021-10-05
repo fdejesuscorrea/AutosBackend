@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "install": "npm install cors dotenv express jsonwebtoken multer mysql mysql2 nodemon read-excel-file sequelize sequelize-cli corsnop"
+    "install": "npm install dotenv express jsonwebtoken multer mysql mysql2 nodemon read-excel-file sequelize sequelize-cli cors"
   },
   "repository": {
     "type": "git",
