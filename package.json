@@ -1,0 +1,39 @@
+{
+  "name": "autosbackend",
+  "version": "1.0.0",
+  "description": "backend para practica EFDI",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "install": "npm install cors dotenv express jsonwebtoken multer mysql mysql2 nodemon read-excel-file sequelize sequelize-cli corsnop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fdejesuscorrea/AutosBackend.git"
+  },
+  "keywords": [
+    "backend",
+    "nodejs",
+    "api"
+  ],
+  "author": "fdejesuscorrea",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.0",
+    "nodemon": "^2.0.13",
+    "read-excel-file": "^5.2.10",
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/fdejesuscorrea/AutosBackend/issues"
+  },
+  "homepage": "https://github.com/fdejesuscorrea/AutosBackend#readme"
+}
