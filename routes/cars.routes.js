@@ -5,8 +5,11 @@ const {VerifyToken} =require("../middlewares");
 const {BillPolicy} =require("../policies");
 const {ROOT,BACKEND} =require("../config");
 const fs = require("fs");
+const fs = require("fs");
 const multer =require("multer");
 const path = require("path");
+const fs = require("fs");
+const fs = require("fs");
 let storage=multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null,'./upload');
