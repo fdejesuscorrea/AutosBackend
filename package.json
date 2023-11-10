@@ -13,19 +13,22 @@
     "type": "git",
     "url": "git+https://github.com/fdejesuscorrea/AutosBackend.git"
   },
+  "jest": {
+    "coverageReporters": ["lcov", "text", "text-summary"],
+    "coverageDirectory": "./coverage"
+  },
   "keywords": [
     "backend",
     "nodejs",
     "api"
   ],
-
   "author": "fdejesuscorrea",
   "license": "ISC",
   "dependencies": {
-    "jest": "^27.4.7",
     "cors": "^2.8.5",
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
+    "jest": "^27.4.7",
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.3",
     "mysql": "^2.18.1",
@@ -38,5 +41,8 @@
   "bugs": {
     "url": "https://github.com/fdejesuscorrea/AutosBackend/issues"
   },
-  "homepage": "https://github.com/fdejesuscorrea/AutosBackend#readme"
+  "homepage": "https://github.com/fdejesuscorrea/AutosBackend#readme",
+  "devDependencies": {
+    "jest-sonar-reporter": "^2.0.0"
+  }
 }
