@@ -51,6 +51,16 @@ router.get("/cars",VerifyToken,async(req,res)=>{
     const cars = await Car.findAll({where:{disabled:false}});
     return res.json({cars:cars});
 });*/
+/*
+router.get("/cars",VerifyToken,async(req,res)=>{
+    const cars = await Car.findAll({where:{disabled:false}});
+    return res.json({cars:cars});
+});*/
+/*
+router.get("/cars",VerifyToken,async(req,res)=>{
+    const cars = await Car.findAll({where:{disabled:false}});
+    return res.json({cars:cars});
+});*/
 router.put("/cars/:id",upload.single("file"),VerifyToken,async(req,res)=>{
     console.log(req.params.id);
     var car ={};
