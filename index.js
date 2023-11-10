@@ -1,6 +1,8 @@
 const express = require("express");
 const server = express();
+const serv = express();
 const cors = require("cors");
+const cor = require("cors");
 const {PORT, ROOT} = require("./config");
 const {SignRouter,CarsRouter,CarUpRouter} =require("./routes");
 require("./data/db");
