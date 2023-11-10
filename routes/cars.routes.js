@@ -4,11 +4,8 @@ const {Car} = require("../data/db");
 const {VerifyToken} =require("../middlewares");
 const {BillPolicy} =require("../policies");
 const {ROOT,BACKEND} =require("../config");
-const fs = require("fs");
-const fs = require("fs");
 const multer =require("multer");
 const path = require("path");
-const fs = require("fs");
 const fs = require("fs");
 let storage=multer.diskStorage({
     destination:(req,file,cb)=>{
@@ -46,25 +43,11 @@ router.get("/cars",VerifyToken,async(req,res)=>{
     return res.json({cars:cars});
 });
 
-/*
-router.get("/cars",VerifyToken,async(req,res)=>{
-    const cars = await Car.findAll({where:{disabled:false}});
-    return res.json({cars:cars});
-});*/
-/*
-router.get("/cars",VerifyToken,async(req,res)=>{
-    const cars = await Car.findAll({where:{disabled:false}});
-    return res.json({cars:cars});
-});*/
-/*
-router.get("/cars",VerifyToken,async(req,res)=>{
-    const cars = await Car.findAll({where:{disabled:false}});
-    return res.json({cars:cars});
-});*/
+
 router.put("/cars/:id",upload.single("file"),VerifyToken,async(req,res)=>{
     console.log(req.params.id);
-    var car ={};
-    var newCarImage;
+    const car ={};
+    let newCarImage;
     if(req.body.licensePlate!=undefined){
         const cara = await Car.findAll({where:{licensePlate:req.body.licensePlate}});
         if(cara[0]!=undefined){ 
@@ -89,7 +72,7 @@ router.put("/cars/:id",upload.single("file"),VerifyToken,async(req,res)=>{
         newCarImage=oldImage;
     }
     
-    for (prop in req.body){
+    for (let prop in req.body){
         if(req.body[prop]!=undefined){
             car[prop]=req.body[prop];
         }
@@ -109,7 +92,7 @@ router.post("/cars",upload.single("file"),async(req,res)=>{
         console.log(car)
         return res.status(406).json({message:"ya existe un auto con esa placa"})
     }
-    var carImage;
+    let carImage;
     if(req.file!=undefined){
         carImage = req.file.filename;
     }else{

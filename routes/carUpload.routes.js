@@ -7,8 +7,8 @@ const fs = require("fs");
 const multer = require("multer");
 const path = require("path");
 const xlsxFile = require("read-excel-file/node");
-var inputPlates = [];
-let storage = multer.diskStorage({
+const inputPlates = [];
+const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./excel");
   },
@@ -31,7 +31,7 @@ router.post("/upload", VerifyToken, upload.single("excel"), async(req, res) => {
         const carBrand = row[2];
         const carDetail = row[3];
         const repairDetail = row[4];
-        var cari = {};
+        const cari = {};
         const car = await Car.findAll({
           where: { licensePlate: licensePlate },
         });
