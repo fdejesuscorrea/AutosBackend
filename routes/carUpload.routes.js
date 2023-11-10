@@ -8,6 +8,20 @@ const multer = require("multer");
 const path = require("path");
 const xlsxFile = require("read-excel-file/node");
 const inputPlates = [];
+//aqui empieza solucion problema seguridad ante DDOs
+const form = new Formidable();
+form.maxFileSize = 8000000;
+let diskUpload = multer({
+  storage: diskStorage,
+  limits: {
+     fileSize: 8000000 // Compliant: 8MB
+  }
+});
+let jsonParser = bodyParser.json(); // Compliant, when the limit is not defined, the default value is set to 100kb
+let urlencodedParser = bodyParser.urlencoded({ extended: false, limit: "2mb" });
+
+
+//aqui termina solucion ...
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./excel");
