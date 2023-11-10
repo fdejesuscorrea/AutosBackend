@@ -10,15 +10,19 @@ const xlsxFile = require("read-excel-file/node");
 const inputPlates = [];
 //aqui empieza solucion problema seguridad ante DDOs
 const form = new Formidable();
-form.maxFileSize = 8000000;
+form.maxFileSize = 10000000; // Sensitive: 10MB is more than the recommended limit of 8MB
+
+const formDefault = new Formidable()
 let diskUpload = multer({
   storage: diskStorage,
   limits: {
-     fileSize: 8000000 // Compliant: 8MB
+    fileSize: 10000000 // Sensitive: 10MB is more than the recommended limit of 8MB
   }
 });
-let jsonParser = bodyParser.json(); // Compliant, when the limit is not defined, the default value is set to 100kb
-let urlencodedParser = bodyParser.urlencoded({ extended: false, limit: "2mb" });
+
+let diskUploadUnlimited = multer({ // Sensitive: the default value is no limit
+  storage: diskStorage,
+});
 
 
 //aqui termina solucion ...
