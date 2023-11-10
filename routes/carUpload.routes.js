@@ -7,7 +7,7 @@ const fs = require("fs");
 const multer = require("multer");
 const path = require("path");
 const xlsxFile = require("read-excel-file/node");
-const inputPlates = [];
+
 //aqui empieza solucion problema seguridad ante DDOs
 
 //aqui termina solucion ...

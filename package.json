@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
+    "test": "jest",
     "install": "npm install dotenv express jsonwebtoken multer mysql mysql2 nodemon read-excel-file sequelize sequelize-cli cors"
   },
   "repository": {
@@ -17,9 +18,11 @@
     "nodejs",
     "api"
   ],
+
   "author": "fdejesuscorrea",
   "license": "ISC",
   "dependencies": {
+    "jest": "^27.4.7",
     "cors": "^2.8.5",
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
