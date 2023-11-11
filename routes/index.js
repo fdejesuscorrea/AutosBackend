@@ -9,4 +9,3 @@ function isCarLicensePlate (licensePlate) {
     if(typeof licensePlate != "string") throw new Error("La placa debe ser un string");
     return true;
 }
-isCarLicensePlate()
